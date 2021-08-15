@@ -8,6 +8,7 @@ const ejs = require("ejs");
 const _ = require("lodash");
 const mongoose = require("mongoose");
 const dbUrl = process.env.dbUrl;
+const PORT = process.env.PORT || 3000;
 
 // creating database
 mongoose.connect(dbUrl, { useNewUrlParser: true , useUnifiedTopology: true, useFindAndModify: false});
@@ -142,6 +143,4 @@ app.post("/compose", (req,res) =>
   res.redirect("/");
 });
 
-app.listen(process.PORT || 3000, function() {
-  console.log("Server started on port 3000");
-});
+app.listen(PORT, console.log(`Listening on port ${PORT}.`));
