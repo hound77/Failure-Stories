@@ -1,0 +1,37 @@
+<%- include('partials/header.ejs') -%>
+
+<div class="main-div row">
+
+  <div class="info-div col-12">
+    <h1 class="headings"> Welcome</h1>
+    <h4 class="heading-info"> Welcome </h4>
+    <h1 class="new-secret" style="text-align: center;"> Add your secret <a style="text-align: center;" href="/compose" class="card-link"> <i class="fas fa-plus-circle"></i> </a></h1>
+  </div>
+
+  <div class="secrets-main-div col-12">
+    <div class="row secrets-div">
+
+      <% postsData.forEach( (i) => {  %>
+        <script>
+           var colors = ['#C1E950', '#E69898', 'tan', 'plum','#7EB9F8','#FFC993','#E599E5','#FB606D'];
+            var boxes = document.querySelectorAll(".card");
+            for (i = 0; i < boxes.length; i++) {
+              boxes[i].style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            }
+        </script>
+        
+        <div class="card col-lg-3 col-md-4 col-xs-6 column-of-cards" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title" style="text-align: center;"> <%= i.title %> </h5>
+            <p class="card-text"><%= i.content.substring(0,200) + "..." %></p>
+            <a style="text-align: center;color: black;" href="/posts/<%= i._id %>" class="card-link"> Read More</a>
+          </div>
+        </div>
+      <% });  %>
+
+    </div>
+  </div>
+
+</div>
+
+<%- include('partials/footer.ejs') -%>
