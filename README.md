@@ -1,4 +1,4 @@
-Open app using https://camouflaged.herokuapp.com/
+Open app using
 
 
 
