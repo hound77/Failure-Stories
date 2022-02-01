@@ -59,35 +59,6 @@ app.get("/", async (req, res) => {
   }
 });
 
-// app.get("/", (req,res)=> {
-//   posts.find( {}, function(err,results) {
-//       if(err)
-//       {
-//         console.log(err);
-//       }
-//       else
-//       {
-//         if(results.length === 0)
-//         {
-//           posts.insertMany(defaultBlogs,function(err){
-//             if(err)
-//             {
-//               console.log(err);
-//             }
-//           });
-//           res.redirect("/");
-//         }
-//         else
-//         {
-//           var renderData =
-//           {
-//             postsData : results
-//           };
-//           res.render("home", renderData);
-//         }
-//       }
-//     });
-// });
 
 app.get("/about", (req,res)=>
 {
